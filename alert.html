@@ -1,0 +1,126 @@
+<!-- Create an easy way to create social captions during severe weather season -->
+<!DOCTYPE html> 
+<!-- First line of code in all of your HTML documents. Declaration of version of HTML -->
+
+<html> 
+<!-- Container for the document-->
+	
+
+    <!-- Setting a creative title for the page -->
+    <head>
+	<!-- Pull in the code within an external javascript file (located in the same directory) -->
+    <script src='svr-weather.js'></script>
+	
+     <title> Weather Alert Generator </title>
+    </head>
+
+    <!-- The body of our document which contains things to be rendered by the browser-->
+    <body> 
+		<!--Make a form--> 
+		<form action="/weather-alert.html" method="POST">
+			
+			<div id= "alert-type">
+			<p>Current Weather Alert</p>
+			<input name="alert-type" type="radio" value="Tornado Warning">Tornado Warning<br>
+			<input name="alert-type" type="radio" value="Severe Thunderstorm Warning">Severe Thunderstorm Warning<br>
+			<input name="alert-type" type="radio" value="Flash Flood Warning">Flash Flood Warning<br>
+			<input name="alert-type" type="radio" value="Dust Storm Warning">Dust Storm Warning<br>
+			</div>
+			
+			<div id = "county">
+			<p> What counties are included? </p>
+			<input name="county" type="checkbox" value="Curry">Curry
+			<input name="county" type="checkbox" value="Roosevelt">Roosevelt
+			<input name="county" type="checkbox" value="Lea">Lea<br>
+			<input name="county" type="checkbox" value="Parmer">Parmer
+			<input name="county" type="checkbox" value="Castro">Castro
+			<input name="county" type="checkbox" value="Swisher">Swisher
+			<input name="county" type="checkbox" value="Briscoe">Briscoe
+			<input name="county" type="checkbox" value="Hall">Hall
+			<input name="county" type="checkbox" value="Childress">Childress<br>
+			<input name="county" type="checkbox" value="Bailey">Bailey
+			<input name="county" type="checkbox" value="Lamb">Lamb
+			<input name="county" type="checkbox" value="Hale">Hale
+			<input name="county" type="checkbox" value="Floyd">Floyd
+			<input name="county" type="checkbox" value="Motley">Motley
+			<input name="county" type="checkbox" value="Cottle">Cottle<br>
+			<input name="county" type="checkbox" value="Cochran">Cochran
+			<input name="county" type="checkbox" value="Hockley">Hockley
+			<input name="county" type="checkbox" value="Lubbock">Lubbock
+			<input name="county" type="checkbox" value="Crosby">Crosby
+			<input name="county" type="checkbox" value="Dickens">Dickens
+			<input name="county" type="checkbox" value="King">King<br>
+			<input name="county" type="checkbox" value="Yoakum">Yoakum
+			<input name="county" type="checkbox" value="Terry">Terry
+			<input name="county" type="checkbox" value="Lynn">Lynn
+			<input name="county" type="checkbox" value="Garza">Garza
+			<input name="county" type="checkbox" value="Kent">Kent<br>
+			<input name="county" type="checkbox" value="Gaines">Gaines
+			<input name="county" type="checkbox" value="Dawson">Dawson
+			<input name="county" type="checkbox" value="Borden">Borden
+			<input name="county" type="checkbox" value="Scurry">Scurry<br>
+			</div>
+			
+			<div id = "cntySelection">
+			<p> Add singular or plural form? </p>
+			<input name="cntySelection" type="radio" value="County">County<br>
+			<input name="cntySelection" type="radio" value="Counties">Counties<br>
+			</div>
+			
+			<div id="expiration-section">
+			<p>What's the expiration time</p>
+			<input id="expiration" name="expiration" type="text" placeholder="type here">
+			</div>
+			
+			
+			
+			<div id = "hailThreat">
+			<p>What threshold would the HAIL parameter be UP TO?</p>
+			<input name="hailThreat" type="radio" value="quarter sized hail (1'')">quarter sized hail(1") <br>
+			<input name="hailThreat" type="radio" value="ping pong ball sized hail (1.5'')">ping pong ball sized hail (1.5") <br>
+			<input name="hailThreat" type="radio" value="golf ball sized hail (1.75'')">golf ball sized hail (1.75") <br>
+			<input name="hailThreat" type="radio" value="egg sized hail (2'')">egg sized hail (2") <br>
+			<input name="hailThreat" type="radio" value="tennis ball sized hail (2.5'') ">tennis ball sized hail (2.5") <br>
+			<input name="hailThreat" type="radio" value="baseball sized hail (1.75'') ">baseball sized hail (1.75") <br>
+			<input name="hailThreat" type="radio" value="softball sized hail (4'')">softball sized hail (4") <br>
+			<input name="hailThreat" type="radio" value="grapefruit sized hail (4.5'') ">grapefruit sized hail (4.5") <br>
+			</div>
+			<!-- value is what is added into paragraph; regular text is only shown for selections-->
+			
+			<div id = "windThreat">
+			<p>What threshold would the WIND parameter be UP TO?</p>
+			<input name="windThreat" type="radio" value="60 MPH wind gusts">60 MPH wind gusts <br>
+			<input name="windThreat" type="radio" value="70 MPH wind gusts">70 MPH wind gusts <br>
+			<input name="windThreat" type="radio" value="80 MPH wind gusts">80 MPH wind gusts <br>
+			<input name="windThreat" type="radio" value="90 MPH wind gusts">90 MPH wind gusts <br>
+			</div>
+			
+			<div id="direction">
+			<p>The storm is moving what direction?</p>
+			<input name="direction" type="radio" value="NW">NW 
+			<input name="direction" type="radio" value="N">N 
+			<input name="direction" type="radio" value="NE">NE 
+			<input name="direction" type="radio" value="E">E
+			<input name="direction" type="radio" value="SE">SE
+			<input name="direction" type="radio" value="S">S 
+			<input name="direction" type="radio" value="SW">SW
+			<input name="direction" type="radio" value="W">W 
+			</div>
+			
+			<div id="speed-section">
+			<p>How fast is the storm moving (just add the number)?</p>
+			<input id="speed" name="speed" type="number" placeholder="type here">
+			</div>
+			
+			<div id = "howCritical">
+			<p> Add: SEEK SHELTER IMMEDIATELY</p>
+			<input name="howCritical" type="radio" value="yes">yes
+			<input name="howCritical" type="radio" value="no">no <br>
+			</div>
+
+        <!-- Make a button       and call the  Run() method-->
+        <input type='button' value='Generate Message!' onclick='RunG();'></input>
+		<p id="output"></p>
+        </form>
+    </body>
+</html>
